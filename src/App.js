@@ -12,7 +12,6 @@ const App = () => {
 
   const onSubmit = (data) => console.log(data);
   console.log("errors", errors);
-
   return (
     <div className="container">
       <div className="row">
@@ -34,15 +33,13 @@ const App = () => {
                   maxLength: 80,
                 })}
               />
-                 {errors.name && (
+              {errors.name && (
                 <span className="error">
                   {errors.name.type === "required" &&
                     "This field is manditory."}
                   {errors.name.type === "maxLength" && "Less than 15 char"}
                 </span>
               )}
-
-
               {/* E-mail */}
               <p className="input-label">Email *</p>
               <input
@@ -61,21 +58,22 @@ const App = () => {
                   {errors.email.type === "pattern" && "Invalid Email Address"}
                 </span>
               )}
-                {/* Phone */}
-                <p className="input-label">Phone</p>
+              {/* Phone */}
+              <p className="input-label">Phone</p>
               <input
                 className="input"
                 type="phone"
                 placeholder="PhoneNumber"
                 {...register("phone", {
-                  pattern:   /^(?:(?:\+?1\s*(?:[.-]\s*)?)?(?:\(\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\s*\)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\s*(?:[.-]\s*)?)?([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\s*(?:[.-]\s*)?([0-9]{4})(?:\s*(?:#|x\.?|ext\.?|extension)\s*(\d+))?$/,
+                  pattern:
+                    /^(?:(?:\+?1\s*(?:[.-]\s*)?)?(?:\(\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\s*\)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\s*(?:[.-]\s*)?)?([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\s*(?:[.-]\s*)?([0-9]{4})(?:\s*(?:#|x\.?|ext\.?|extension)\s*(\d+))?$/,
                 })}
               />
-              {errors.phone && 
+              {errors.phone && (
                 <span className="error">"Invalid phone number"</span>
-              }
-                {/* Messege */}
-                <p className="input-label">Messege *</p>
+              )}
+              {/* Messege */}
+              <p className="input-label">Messege *</p>
               <input
                 className="input"
                 type="message"
@@ -84,21 +82,22 @@ const App = () => {
                   required: true,
                 })}
               />
-              {errors.message && 
+              {errors.message && (
                 <span className="error">"This field is required"</span>
-              }
+              )}
               {/* Submit */}
               <div>
                 <input className="submit" type="submit" value="Send Message" />
-              </div> 
+              </div>
             </form>
           </div>
         </div>
+
         {/* Image column */}
         <div className="column">
-          <img 
-          src="https://images.unsplash.com/photo-1676049938075-5abc627ab292?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-          alt="travel experiance"
+          <img
+            src="https://images.unsplash.com/photo-1676049938075-5abc627ab292?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+            alt="travel experiance"
           />
         </div>
       </div>
